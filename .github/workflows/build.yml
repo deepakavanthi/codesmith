@@ -1,4 +1,4 @@
-name: Create Development Container (codesmith)
+name: Codesmith
 on:
   push:
     branches:

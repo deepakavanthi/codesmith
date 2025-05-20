@@ -1,5 +1,7 @@
 # Codesmith Development Environment
 
+[![Codesmith](https://github.com/deepakavanthi/codesmith/actions/workflows/build.yml/badge.svg)](https://github.com/deepakavanthi/codesmith/actions/workflows/build.yml)
+
 Codesmith is a containerized development environment that simplifies the development and execution of infrastructure as code, automation scripts, and application development. It has the following features,
 
 - Built on Ubuntu 24.04 LTS
@@ -12,11 +14,16 @@ Codesmith is a containerized development environment that simplifies the develop
   - **PowerShell** (Task Automation & Configuration)
   - **OpenTofu** (Open-source alternative to Terraform)
 
-## Running Codesmith as a Container
+## Releases
+
+- deepakavanthi/codesmith : For AMD64 based environments
+- deepakavanthi/codesmith-arm : For Apple Silicon based environments
+
+## Running Codesmith
 
 ### Prerequisites
 
-Ensure you have **Docker** or **Podman** installed on your system.
+Ensure you have **[Docker](https://www.docker.com/products/docker-desktop/)** or **[Podman](https://podman.io/)** installed on your system.
 
 ### Running with Docker
 
@@ -28,6 +35,18 @@ docker run -i -d -p 2222:22 ghcr.io/deepakavanthi/codesmith:latest
 
 ```sh
 podman run -i -d -p 2222:22 ghcr.io/deepakavanthi/codesmith:latest
+```
+
+## Root Password
+
+The default root password is avaible at ~/.rootpass
+
+## SSH Configuration
+
+SSH service has been configured but needs to be started. It is recommended to disable SSH login using a password and to use a key. You can start the SSH service using,
+
+```sh
+service ssh start
 ```
 
 ## License
