@@ -1,8 +1,6 @@
-name: Codesmith
+name: Codesmith-MAC-ARM
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 
 # Setup environment variables that will be used in the pipeline
 env:
@@ -15,7 +13,7 @@ env:
 jobs: 
   create-container:
     name: Build Container
-    runs-on: ubuntu-latest
+    runs-on: macos-14
     steps:
       - name: Convert repository name to lowercase
         id: repository_name
